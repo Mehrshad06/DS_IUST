@@ -187,3 +187,5 @@ The shopping cart supports the following operations:
 ### Compilation
 ```bash
 g++ -std=gnu++17 main.cpp -o online_store
+./online_store
+
