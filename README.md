@@ -1,33 +1,40 @@
-# StoreX – Command-Line Online Store Management System
+# 🛒 CLI Online Store System
+### Data Structures & Algorithms – Final Project
+
+---
 
 ## 📌 Project Overview
 
-**StoreX** is a command-line based online store management system developed in **C++** as the final project for the **Data Structures and Algorithms** course.  
-The primary objective of this project is to design and implement a fully functional store system while **manually applying fundamental data structures and algorithms**, without relying on built-in STL search or sorting utilities.
+This project is a **Command Line Interface (CLI) Online Store Management System** developed as the final project for the **Data Structures and Algorithms** course.
 
-All user interactions are performed through a **CLI (Command Line Interface)**, with the main focus on correctness, efficiency, and clarity of data structure usage rather than graphical appearance.
+The system manages a single type of product and focuses on the **correct design and manual implementation of data structures and algorithms**, rather than graphical user interfaces.  
+All user interactions are performed entirely through the terminal.
 
----
-
-## 🎯 Project Objectives
-
-- Apply core **data structures** in a real-world scenario
-- Implement **manual searching and sorting algorithms**
-- Design a modular and maintainable system architecture
-- Practice file handling and persistent data storage
-- Simulate features of an online shopping system
+The project is implemented in **C++**, and all searching and sorting operations are **implemented manually**, without using built-in STL algorithms, in full compliance with the course requirements.
 
 ---
 
-## 🧩 Core Features
+## 🎯 Project Goals
 
-### 1. Product Management
-- Add new products
-- Remove existing products
+- Practice and apply fundamental **data structures**
+- Implement classic **searching and sorting algorithms manually**
+- Design a modular, readable, and maintainable system
+- Build a project suitable for **academic evaluation and oral defense**
+
+---
+
+## ⚙️ System Features
+
+### 1️⃣ Product Management
+
+The system provides full product management functionality:
+
+- Add a new product
+- Remove an existing product
 - Edit product information
 - Display all products
 
-Each product includes the following attributes:
+Each product contains the following attributes:
 - ID
 - Name
 - Price
@@ -38,124 +45,140 @@ Each product includes the following attributes:
 - Brand
 - Description
 
-Products are primarily stored using a **Singly Linked List**.
+**Data Structure Used:**  
+- Singly Linked List  
+
+**Reason:**  
+Linked lists allow efficient dynamic insertion and deletion of products without shifting elements in memory.
 
 ---
 
-### 2. Search System
-The system supports multiple search methods, each implemented using an appropriate data structure:
+### 2️⃣ Product Search
 
-| Search Type | Data Structure Used |
-|------------|--------------------|
-| Search by name | Binary Search Tree (BST) |
-| Search by category | Hash Table |
-| Search by price range | Linear search |
+The system supports searching products using multiple criteria, each implemented with an appropriate data structure:
 
-All search algorithms are implemented manually without STL shortcuts.
+| Search Criterion | Data Structure | Description |
+|------------------|---------------|-------------|
+| Product Name | Binary Search Tree (BST) | Efficient name-based searching |
+| Category | Hash Table | Fast category-based lookup |
+| Price Range | Linked List Traversal | Manual range filtering |
+
+🚫 No STL search functions are used.
 
 ---
 
-### 3. Product Sorting
-Products can be sorted in **ascending or descending order** using different criteria:
+### 3️⃣ Product Sorting
 
-| Sorting Criterion | Algorithm Used |
-|------------------|---------------|
+Products can be sorted based on different attributes using classic sorting algorithms:
+
+| Sort Criterion | Algorithm Used |
+|---------------|---------------|
 | Price | Quick Sort |
 | Rating | Merge Sort |
-| Sold Count | Selection Sort |
+| Sales Count | Selection Sort |
 
-Sorting is performed on temporary vectors derived from the linked list to preserve data integrity.
+Sorting can be performed in:
+- Ascending order
+- Descending order
+
+🚫 STL `sort()` is not used.
 
 ---
 
-### 4. Product Recommendation System
-A recommendation engine suggests similar products based on:
-- Category similarity
-- Price range proximity
+### 4️⃣ Product Recommendation System
+
+When a product is viewed, the system recommends similar products based on:
+- Same category
+- Similar price range
 - Product rating
 - Sales performance
 
-Each product receives a **similarity score**, and recommendations are sorted manually using Bubble Sort.
+Each product is assigned a **similarity score**, and the top-scoring products are displayed as recommendations.
 
 ---
 
-### 5. System Logging
-All major system interactions are logged, including:
+### 5️⃣ Logging System
+
+All major user interactions are recorded in a logging system, including:
 - Adding products
 - Editing products
 - Deleting products
-- Searching
+- Searching products
 - Viewing product details
-- Shopping cart actions
+- Shopping cart operations
 
-Logs are displayed at program termination and saved to:
+Logs are displayed when the program exits and are also saved to a file.
+
+**Log File:**
+
+
+
+
+**Data Structure Used:**  
+- Vector
 
 ---
 
-## ⭐ Bonus Features (Extra Points)
+## ⭐ Bonus Features (Extra Credit)
 
 ### 🛒 Shopping Cart
-- Add products to cart
-- Remove products from cart
+
+The shopping cart supports the following operations:
+- Add a product to the cart
+- Remove a product from the cart
 - View cart contents
-- Calculate total price
+- Calculate total price of items
 
-Implemented using a dynamic `vector` structure.
-
----
-
-### 🕒 Recently Viewed Products
-- Tracks the last 5 viewed products
-- Prevents duplicate entries
-- Automatically removes the oldest viewed product
-
-Implemented using a `deque` data structure.
+**Data Structure Used:**  
+- Vector  
 
 ---
 
-## 🗃️ Data Persistence
+### 👀 Recently Viewed Products
 
-- Product data is stored in a **CSV file**
-- File is automatically loaded at program startup
-- All changes are saved on exit
+- Stores the last **5 products** viewed by the user
+- Automatically removes duplicates
+- Displays recent viewing history
 
-**Supported format:**
+**Data Structure Used:**  
+- Deque  
+
+---
+
+## 💾 Data Storage
+
+- Product data is stored persistently in a **CSV file**
+- Data is loaded automatically at program startup
+- All modifications are saved during program execution
+
+**File Used:**
+
+
 
 
 
 ---
 
-## 🧠 Data Structures Used
+## 🧠 Data Structures Summary
 
-- Singly Linked List
-- Binary Search Tree (BST)
-- Hash Table (with chaining)
-- Vector
-- Deque
-- Pair (for scoring and recommendations)
-
----
-
-## ⚙️ Algorithms Implemented
-
-- Linear Search
-- Hash-based Search
-- Binary Search Tree traversal
-- Quick Sort
-- Merge Sort
-- Selection Sort
-- Bubble Sort
-
-> ⚠️ No STL search or sort algorithms were used in compliance with course rules.
+| System Component | Data Structure | Reason |
+|------------------|---------------|--------|
+| Product storage | Linked List | Dynamic size and flexibility |
+| Search by name | Binary Search Tree (BST) | Faster average search |
+| Search by category | Hash Table | Near constant-time access |
+| Sorting | Custom algorithms | Manual implementation requirement |
+| Shopping cart | Vector | Simple and efficient |
+| Recent views | Deque | Fast front/back operations |
+| Logging | Vector | Sequential logging |
 
 ---
 
-## 🧪 Input Validation
+## 🛠 Technologies Used
 
-- Numeric validation for IDs, prices, ratings, stock, and sold count
-- Unique product ID enforcement
-- Range checks for price and rating
-- Safe input handling to prevent invalid entries
+- **Programming Language:** C++
+- **Paradigm:** Object-Oriented Programming (OOP)
+- **Interface:** Command Line Interface (CLI)
+- **Data Storage Format:** CSV
 
 ---
 
@@ -163,4 +186,4 @@ Implemented using a `deque` data structure.
 
 ### Compilation
 ```bash
-g++ -std=gnu++17 main.cpp -o StoreX
+g++ -std=gnu++17 main.cpp -o online_store
